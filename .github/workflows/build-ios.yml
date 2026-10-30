@@ -28,6 +28,11 @@ jobs:
       - name: Run Core Tests (SwiftPM)
         run: swift test
 
+      - name: Generate Native Xcode Project
+        run: |
+          brew install xcodegen
+          xcodegen generate
+
       - name: Build iOS Application (Release)
         run: |
           xcodebuild -project Baloot.xcodeproj \
