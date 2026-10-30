@@ -1,4 +1,4 @@
-#if canImport(UIKit)
+﻿#if canImport(UIKit)
 import SwiftUI
 
 enum AppLanguage: String, CaseIterable, Identifiable {

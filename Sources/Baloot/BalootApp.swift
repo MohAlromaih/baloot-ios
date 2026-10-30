@@ -1,6 +1,8 @@
-#if canImport(UIKit)
+﻿#if canImport(UIKit)
 import SwiftUI
+#if canImport(BalootCore)
 import BalootCore
+#endif
 
 @main
 struct BalootApp: App {

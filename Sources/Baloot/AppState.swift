@@ -1,7 +1,9 @@
-#if canImport(UIKit)
+﻿#if canImport(UIKit)
 import SwiftUI
 import Observation
+#if canImport(BalootCore)
 import BalootCore
+#endif
 
 /// Pending correction that would create an earlier win (needs user decision).
 struct PendingConflict: Identifiable {

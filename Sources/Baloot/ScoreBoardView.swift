@@ -1,6 +1,8 @@
-#if canImport(UIKit)
+﻿#if canImport(UIKit)
 import SwiftUI
+#if canImport(BalootCore)
 import BalootCore
+#endif
 
 struct ScoreBoardView: View {
     @Environment(AppState.self) var state

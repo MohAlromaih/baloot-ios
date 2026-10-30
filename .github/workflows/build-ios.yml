@@ -28,12 +28,13 @@ jobs:
       - name: Run Core Tests (SwiftPM)
         run: swift test
 
-      - name: Build iOS Application
+      - name: Build iOS Application (Release)
         run: |
           xcodebuild -project Baloot.xcodeproj \
             -scheme Baloot \
             -configuration Release \
             -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
             -derivedDataPath build \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
