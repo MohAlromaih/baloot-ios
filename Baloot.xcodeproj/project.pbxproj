@@ -1,0 +1,319 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		200000000000000000000001 /* BalootApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000001 /* BalootApp.swift */; };
+		200000000000000000000002 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000002 /* AppState.swift */; };
+		200000000000000000000003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000003 /* ContentView.swift */; };
+		200000000000000000000004 /* ScoreBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000004 /* ScoreBoardView.swift */; };
+		200000000000000000000005 /* HandInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000005 /* HandInputView.swift */; };
+		200000000000000000000006 /* HandHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000006 /* HandHistoryView.swift */; };
+		200000000000000000000007 /* Sheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000007 /* Sheets.swift */; };
+		200000000000000000000008 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000008 /* L10n.swift */; };
+		200000000000000000000010 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000010 /* Models.swift */; };
+		200000000000000000000011 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000011 /* Validation.swift */; };
+		200000000000000000000012 /* Scoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000012 /* Scoring.swift */; };
+		200000000000000000000013 /* KeypadAllocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000013 /* KeypadAllocation.swift */; };
+		200000000000000000000014 /* MatchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000014 /* MatchEngine.swift */; };
+		200000000000000000000015 /* MatchStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000015 /* MatchStorage.swift */; };
+		200000000000000000000020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000020 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		000000000000000000000001 /* Baloot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baloot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		100000000000000000000001 /* BalootApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Baloot/BalootApp.swift"; sourceTree = "<group>"; };
+		100000000000000000000002 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Baloot/AppState.swift"; sourceTree = "<group>"; };
+		100000000000000000000003 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Baloot/ContentView.swift"; sourceTree = "<group>"; };
+		100000000000000000000004 /* ScoreBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Baloot/ScoreBoardView.swift"; sourceTree = "<group>"; };
+		100000000000000000000005 /* HandInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Baloot/HandInputView.swift"; sourceTree = "<group>"; };
+		100000000000000000000006 /* HandHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Baloot/HandHistoryView.swift"; sourceTree = "<group>"; };
+		100000000000000000000007 /* Sheets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Baloot/Sheets.swift"; sourceTree = "<group>"; };
+		100000000000000000000008 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Baloot/L10n.swift"; sourceTree = "<group>"; };
+		100000000000000000000010 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/BalootCore/Models.swift"; sourceTree = "<group>"; };
+		100000000000000000000011 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/BalootCore/Validation.swift"; sourceTree = "<group>"; };
+		100000000000000000000012 /* Scoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/BalootCore/Scoring.swift"; sourceTree = "<group>"; };
+		100000000000000000000013 /* KeypadAllocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/BalootCore/KeypadAllocation.swift"; sourceTree = "<group>"; };
+		100000000000000000000014 /* MatchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/BalootCore/MatchEngine.swift"; sourceTree = "<group>"; };
+		100000000000000000000015 /* MatchStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/BalootCore/MatchStorage.swift"; sourceTree = "<group>"; };
+		100000000000000000000020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets.xcassets"; sourceTree = "<group>"; };
+		100000000000000000000021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Resources/Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		300000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		400000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				400000000000000000000002 /* Sources */,
+				400000000000000000000003 /* Resources */,
+				400000000000000000000004 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		400000000000000000000002 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000001 /* BalootApp.swift */,
+				100000000000000000000002 /* AppState.swift */,
+				100000000000000000000003 /* ContentView.swift */,
+				100000000000000000000004 /* ScoreBoardView.swift */,
+				100000000000000000000005 /* HandInputView.swift */,
+				100000000000000000000006 /* HandHistoryView.swift */,
+				100000000000000000000007 /* Sheets.swift */,
+				100000000000000000000008 /* L10n.swift */,
+				100000000000000000000010 /* Models.swift */,
+				100000000000000000000011 /* Validation.swift */,
+				100000000000000000000012 /* Scoring.swift */,
+				100000000000000000000013 /* KeypadAllocation.swift */,
+				100000000000000000000014 /* MatchEngine.swift */,
+				100000000000000000000015 /* MatchStorage.swift */,
+			);
+			sourceTree = "<group>";
+		};
+		400000000000000000000003 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000020 /* Assets.xcassets */,
+				100000000000000000000021 /* Info.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		400000000000000000000004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000001 /* Baloot.app */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		500000000000000000000001 /* Baloot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 600000000000000000000001 /* Build configuration list for PBXNativeTarget "Baloot" */;
+			buildPhases = (
+				700000000000000000000001 /* Sources */,
+				300000000000000000000001 /* Frameworks */,
+				700000000000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Baloot;
+			productName = Baloot;
+			productReference = 000000000000000000000001 /* Baloot.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		800000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					500000000000000000000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 600000000000000000000002 /* Build configuration list for PBXProject "Baloot" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = ar;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				ar,
+				en,
+				Base,
+			);
+			mainGroup = 400000000000000000000001;
+			productRefGroup = 400000000000000000000004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				500000000000000000000001 /* Baloot */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		700000000000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+		200000000000000000000020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000020 /* Assets.xcassets */; };
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		700000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+		200000000000000000000001 /* BalootApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000001 /* BalootApp.swift */; };
+		200000000000000000000002 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000002 /* AppState.swift */; };
+		200000000000000000000003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000003 /* ContentView.swift */; };
+		200000000000000000000004 /* ScoreBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000004 /* ScoreBoardView.swift */; };
+		200000000000000000000005 /* HandInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000005 /* HandInputView.swift */; };
+		200000000000000000000006 /* HandHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000006 /* HandHistoryView.swift */; };
+		200000000000000000000007 /* Sheets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000007 /* Sheets.swift */; };
+		200000000000000000000008 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000008 /* L10n.swift */; };
+		200000000000000000000010 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000010 /* Models.swift */; };
+		200000000000000000000011 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000011 /* Validation.swift */; };
+		200000000000000000000012 /* Scoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000012 /* Scoring.swift */; };
+		200000000000000000000013 /* KeypadAllocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000013 /* KeypadAllocation.swift */; };
+		200000000000000000000014 /* MatchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000014 /* MatchEngine.swift */; };
+		200000000000000000000015 /* MatchStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000015 /* MatchStorage.swift */; };
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		900000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		900000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		900000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "حاسبة البلوت";
+				INFOPLIST_KEY_LSRequiresIPhoneOS = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baloot.calculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		900000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "حاسبة البلوت";
+				INFOPLIST_KEY_LSRequiresIPhoneOS = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baloot.calculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		600000000000000000000001 /* Build configuration list for PBXNativeTarget "Baloot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				900000000000000000000003 /* Debug */,
+				900000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		600000000000000000000002 /* Build configuration list for PBXProject "Baloot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				900000000000000000000001 /* Debug */,
+				900000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 800000000000000000000001 /* Project object */;
+}

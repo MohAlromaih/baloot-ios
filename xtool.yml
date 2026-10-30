@@ -1,0 +1,5 @@
+version: 1
+bundleID: com.baloot.calculator
+product: Baloot
+iconPath: Resources/AppIcon.png
+infoPath: Resources/Info.plist

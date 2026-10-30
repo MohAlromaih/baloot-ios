@@ -1,0 +1,53 @@
+{
+  "": {
+    "swift-dependencies": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/master.swiftdeps"
+  },
+  "/app/Sources/Baloot/AppState.swift": {
+    "dependencies": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/AppState.d",
+    "object": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/AppState.swift.o",
+    "swiftmodule": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/AppState~partial.swiftmodule",
+    "swift-dependencies": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/AppState.swiftdeps"
+  },
+  "/app/Sources/Baloot/BalootApp.swift": {
+    "dependencies": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/BalootApp.d",
+    "object": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/BalootApp.swift.o",
+    "swiftmodule": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/BalootApp~partial.swiftmodule",
+    "swift-dependencies": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/BalootApp.swiftdeps"
+  },
+  "/app/Sources/Baloot/ContentView.swift": {
+    "dependencies": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/ContentView.d",
+    "object": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/ContentView.swift.o",
+    "swiftmodule": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/ContentView~partial.swiftmodule",
+    "swift-dependencies": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/ContentView.swiftdeps"
+  },
+  "/app/Sources/Baloot/HandHistoryView.swift": {
+    "dependencies": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/HandHistoryView.d",
+    "object": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/HandHistoryView.swift.o",
+    "swiftmodule": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/HandHistoryView~partial.swiftmodule",
+    "swift-dependencies": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/HandHistoryView.swiftdeps"
+  },
+  "/app/Sources/Baloot/HandInputView.swift": {
+    "dependencies": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/HandInputView.d",
+    "object": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/HandInputView.swift.o",
+    "swiftmodule": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/HandInputView~partial.swiftmodule",
+    "swift-dependencies": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/HandInputView.swiftdeps"
+  },
+  "/app/Sources/Baloot/L10n.swift": {
+    "dependencies": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/L10n.d",
+    "object": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/L10n.swift.o",
+    "swiftmodule": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/L10n~partial.swiftmodule",
+    "swift-dependencies": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/L10n.swiftdeps"
+  },
+  "/app/Sources/Baloot/ScoreBoardView.swift": {
+    "dependencies": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/ScoreBoardView.d",
+    "object": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/ScoreBoardView.swift.o",
+    "swiftmodule": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/ScoreBoardView~partial.swiftmodule",
+    "swift-dependencies": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/ScoreBoardView.swiftdeps"
+  },
+  "/app/Sources/Baloot/Sheets.swift": {
+    "dependencies": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/Sheets.d",
+    "object": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/Sheets.swift.o",
+    "swiftmodule": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/Sheets~partial.swiftmodule",
+    "swift-dependencies": "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/Sheets.swiftdeps"
+  }
+}

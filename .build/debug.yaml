@@ -1,0 +1,193 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "Baloot-x86_64-unknown-linux-gnu-debug.module": ["<Baloot-x86_64-unknown-linux-gnu-debug.module>"]
+  "BalootCore-x86_64-unknown-linux-gnu-debug.module": ["<BalootCore-x86_64-unknown-linux-gnu-debug.module>"]
+  "BalootCoreTests-x86_64-unknown-linux-gnu-debug.module": ["<BalootCoreTests-x86_64-unknown-linux-gnu-debug.module>"]
+  "BalootPackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module": ["<BalootPackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module>"]
+  "BalootPackageTests-x86_64-unknown-linux-gnu-debug.module": ["<BalootPackageTests-x86_64-unknown-linux-gnu-debug.module>"]
+  "BalootPackageTests-x86_64-unknown-linux-gnu-debug.test": ["<BalootPackageTests-x86_64-unknown-linux-gnu-debug.test>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<Baloot-x86_64-unknown-linux-gnu-debug.module>","<BalootCore-x86_64-unknown-linux-gnu-debug.module>"]
+  "test": ["<Baloot-x86_64-unknown-linux-gnu-debug.module>","<BalootCore-x86_64-unknown-linux-gnu-debug.module>","<BalootCoreTests-x86_64-unknown-linux-gnu-debug.module>","<BalootPackageTests-x86_64-unknown-linux-gnu-debug.test>"]
+default: "main"
+nodes:
+  "/app/Sources/Baloot/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/app/Sources/BalootCore/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/app/Tests/BalootCoreTests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/Baloot.swiftmodule.o":
+    tool: shell
+    inputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/Modules/Baloot.swiftmodule"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/Baloot.swiftmodule.o"]
+    description: "Wrapping AST for Baloot for debugging"
+    args: ["/usr/bin/swiftc","-modulewrap","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/Baloot.swiftmodule","-o","/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/Baloot.swiftmodule.o","-target","x86_64-unknown-linux-gnu"]
+
+  "/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/app/Sources/Baloot/AppState.swift","/app/Sources/Baloot/BalootApp.swift","/app/Sources/Baloot/ContentView.swift","/app/Sources/Baloot/HandHistoryView.swift","/app/Sources/Baloot/HandInputView.swift","/app/Sources/Baloot/L10n.swift","/app/Sources/Baloot/ScoreBoardView.swift","/app/Sources/Baloot/Sheets.swift"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/sources"]
+    description: "Write auxiliary file /app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/sources"
+
+  "/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/BalootCore.swiftmodule.o":
+    tool: shell
+    inputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootCore.swiftmodule"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/BalootCore.swiftmodule.o"]
+    description: "Wrapping AST for BalootCore for debugging"
+    args: ["/usr/bin/swiftc","-modulewrap","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootCore.swiftmodule","-o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/BalootCore.swiftmodule.o","-target","x86_64-unknown-linux-gnu"]
+
+  "/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/app/Sources/BalootCore/KeypadAllocation.swift","/app/Sources/BalootCore/MatchEngine.swift","/app/Sources/BalootCore/MatchStorage.swift","/app/Sources/BalootCore/Models.swift","/app/Sources/BalootCore/Scoring.swift","/app/Sources/BalootCore/Validation.swift"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/sources"]
+    description: "Write auxiliary file /app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/sources"
+
+  "/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/BalootCoreTests.swiftmodule.o":
+    tool: shell
+    inputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootCoreTests.swiftmodule"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/BalootCoreTests.swiftmodule.o"]
+    description: "Wrapping AST for BalootCoreTests for debugging"
+    args: ["/usr/bin/swiftc","-modulewrap","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootCoreTests.swiftmodule","-o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/BalootCoreTests.swiftmodule.o","-target","x86_64-unknown-linux-gnu"]
+
+  "/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/app/Tests/BalootCoreTests/BalootCoreTests.swift","/app/Tests/BalootCoreTests/KeypadAllocationTests.swift"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/sources"]
+    description: "Write auxiliary file /app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/sources"
+
+  "/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/BalootPackageDiscoveredTests.swiftmodule.o":
+    tool: shell
+    inputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootPackageDiscoveredTests.swiftmodule"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/BalootPackageDiscoveredTests.swiftmodule.o"]
+    description: "Wrapping AST for BalootPackageDiscoveredTests for debugging"
+    args: ["/usr/bin/swiftc","-modulewrap","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootPackageDiscoveredTests.swiftmodule","-o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/BalootPackageDiscoveredTests.swiftmodule.o","-target","x86_64-unknown-linux-gnu"]
+
+  "/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.derived/BalootCoreTests.swift","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.derived/all-discovered-tests.swift"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/sources"]
+    description: "Write auxiliary file /app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/sources"
+
+  "/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.derived/all-discovered-tests.swift":
+    tool: test-discovery-tool
+    inputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/BalootCoreTests.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/KeypadAllocationTests.swift.o"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.derived/BalootCoreTests.swift","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.derived/all-discovered-tests.swift"]
+
+  "/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.build/BalootPackageTests.swiftmodule.o":
+    tool: shell
+    inputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootPackageTests.swiftmodule"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.build/BalootPackageTests.swiftmodule.o"]
+    description: "Wrapping AST for BalootPackageTests for debugging"
+    args: ["/usr/bin/swiftc","-modulewrap","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootPackageTests.swiftmodule","-o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.build/BalootPackageTests.swiftmodule.o","-target","x86_64-unknown-linux-gnu"]
+
+  "/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.derived/runner.swift"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.build/sources"]
+    description: "Write auxiliary file /app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.build/sources"
+
+  "/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.derived/runner.swift":
+    tool: test-entry-point-tool
+    inputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootPackageDiscoveredTests.swiftmodule"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.derived/runner.swift"]
+
+  "/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/BalootCore.swiftmodule.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/KeypadAllocation.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/MatchEngine.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/MatchStorage.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/Models.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/Scoring.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/Validation.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/BalootCoreTests.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/BalootCoreTests.swiftmodule.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/KeypadAllocationTests.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/BalootCoreTests.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/BalootPackageDiscoveredTests.swiftmodule.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/all-discovered-tests.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.build/BalootPackageTests.swiftmodule.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.build/runner.swift.o"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.product/Objects.LinkFileList"
+
+  "/app/.build/x86_64-unknown-linux-gnu/debug/swift-version-24593BA9C3E375BF.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/usr/bin/swiftc"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/swift-version-24593BA9C3E375BF.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /app/.build/x86_64-unknown-linux-gnu/debug/swift-version-24593BA9C3E375BF.txt"
+
+  "<Baloot-x86_64-unknown-linux-gnu-debug.module>":
+    tool: phony
+    inputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/AppState.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/BalootApp.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/ContentView.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/HandHistoryView.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/HandInputView.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/L10n.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/ScoreBoardView.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/Sheets.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/Baloot.swiftmodule"]
+    outputs: ["<Baloot-x86_64-unknown-linux-gnu-debug.module>"]
+
+  "<BalootCore-x86_64-unknown-linux-gnu-debug.module>":
+    tool: phony
+    inputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/KeypadAllocation.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/MatchEngine.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/MatchStorage.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/Models.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/Scoring.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/Validation.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootCore.swiftmodule"]
+    outputs: ["<BalootCore-x86_64-unknown-linux-gnu-debug.module>"]
+
+  "<BalootCoreTests-x86_64-unknown-linux-gnu-debug.module>":
+    tool: phony
+    inputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/BalootCoreTests.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/KeypadAllocationTests.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootCoreTests.swiftmodule"]
+    outputs: ["<BalootCoreTests-x86_64-unknown-linux-gnu-debug.module>"]
+
+  "<BalootPackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module>":
+    tool: phony
+    inputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/BalootCoreTests.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/all-discovered-tests.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootPackageDiscoveredTests.swiftmodule"]
+    outputs: ["<BalootPackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module>"]
+
+  "<BalootPackageTests-x86_64-unknown-linux-gnu-debug.module>":
+    tool: phony
+    inputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.build/runner.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootPackageTests.swiftmodule"]
+    outputs: ["<BalootPackageTests-x86_64-unknown-linux-gnu-debug.module>"]
+
+  "<BalootPackageTests-x86_64-unknown-linux-gnu-debug.test>":
+    tool: phony
+    inputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.xctest"]
+    outputs: ["<BalootPackageTests-x86_64-unknown-linux-gnu-debug.test>"]
+
+  "C.Baloot-x86_64-unknown-linux-gnu-debug.module":
+    tool: shell
+    inputs: ["/app/Sources/Baloot/AppState.swift","/app/Sources/Baloot/BalootApp.swift","/app/Sources/Baloot/ContentView.swift","/app/Sources/Baloot/HandHistoryView.swift","/app/Sources/Baloot/HandInputView.swift","/app/Sources/Baloot/L10n.swift","/app/Sources/Baloot/ScoreBoardView.swift","/app/Sources/Baloot/Sheets.swift","/app/.build/x86_64-unknown-linux-gnu/debug/swift-version-24593BA9C3E375BF.txt","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootCore.swiftmodule","/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/sources"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/AppState.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/BalootApp.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/ContentView.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/HandHistoryView.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/HandInputView.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/L10n.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/ScoreBoardView.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/Sheets.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/Baloot.swiftmodule"]
+    description: "Compiling Swift Module 'Baloot' (8 sources)"
+    args: ["/usr/bin/swiftc","-module-name","Baloot","-emit-dependencies","-emit-module","-emit-module-path","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/Baloot.swiftmodule","-output-file-map","/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/output-file-map.json","-parse-as-library","-incremental","-c","@/app/.build/x86_64-unknown-linux-gnu/debug/Baloot.build/sources","-I","/app/.build/x86_64-unknown-linux-gnu/debug/Modules","-target","x86_64-unknown-linux-gnu","-enable-batch-mode","-index-store-path","/app/.build/x86_64-unknown-linux-gnu/debug/index/store","-Onone","-enable-testing","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/app/.build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-parse-as-library","-swift-version","6","-g","-Xcc","-fPIC","-Xcc","-g","-package-name","app","-Xcc","-fno-omit-frame-pointer"]
+
+  "C.BalootCore-x86_64-unknown-linux-gnu-debug.module":
+    tool: shell
+    inputs: ["/app/Sources/BalootCore/KeypadAllocation.swift","/app/Sources/BalootCore/MatchEngine.swift","/app/Sources/BalootCore/MatchStorage.swift","/app/Sources/BalootCore/Models.swift","/app/Sources/BalootCore/Scoring.swift","/app/Sources/BalootCore/Validation.swift","/app/.build/x86_64-unknown-linux-gnu/debug/swift-version-24593BA9C3E375BF.txt","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/sources"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/KeypadAllocation.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/MatchEngine.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/MatchStorage.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/Models.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/Scoring.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/Validation.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootCore.swiftmodule"]
+    description: "Compiling Swift Module 'BalootCore' (6 sources)"
+    args: ["/usr/bin/swiftc","-module-name","BalootCore","-emit-dependencies","-emit-module","-emit-module-path","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootCore.swiftmodule","-output-file-map","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/output-file-map.json","-parse-as-library","-incremental","-c","@/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/sources","-I","/app/.build/x86_64-unknown-linux-gnu/debug/Modules","-target","x86_64-unknown-linux-gnu","-enable-batch-mode","-index-store-path","/app/.build/x86_64-unknown-linux-gnu/debug/index/store","-Onone","-enable-testing","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/app/.build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-parse-as-library","-swift-version","6","-g","-Xcc","-fPIC","-Xcc","-g","-package-name","app","-Xcc","-fno-omit-frame-pointer"]
+
+  "C.BalootCoreTests-x86_64-unknown-linux-gnu-debug.module":
+    tool: shell
+    inputs: ["/app/Tests/BalootCoreTests/BalootCoreTests.swift","/app/Tests/BalootCoreTests/KeypadAllocationTests.swift","/app/.build/x86_64-unknown-linux-gnu/debug/swift-version-24593BA9C3E375BF.txt","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootCore.swiftmodule","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/sources"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/BalootCoreTests.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/KeypadAllocationTests.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootCoreTests.swiftmodule"]
+    description: "Compiling Swift Module 'BalootCoreTests' (2 sources)"
+    args: ["/usr/bin/swiftc","-module-name","BalootCoreTests","-emit-dependencies","-emit-module","-emit-module-path","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootCoreTests.swiftmodule","-output-file-map","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/sources","-I","/app/.build/x86_64-unknown-linux-gnu/debug/Modules","-target","x86_64-unknown-linux-gnu","-enable-batch-mode","-index-store-path","/app/.build/x86_64-unknown-linux-gnu/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/app/.build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-parse-as-library","-swift-version","6","-g","-Xcc","-fPIC","-Xcc","-g","-package-name","app","-Xcc","-fno-omit-frame-pointer"]
+
+  "C.BalootPackageDiscoveredTests-x86_64-unknown-linux-gnu-debug.module":
+    tool: shell
+    inputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.derived/BalootCoreTests.swift","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.derived/all-discovered-tests.swift","/app/.build/x86_64-unknown-linux-gnu/debug/swift-version-24593BA9C3E375BF.txt","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootCoreTests.swiftmodule","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/sources"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/BalootCoreTests.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/all-discovered-tests.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootPackageDiscoveredTests.swiftmodule"]
+    description: "Compiling Swift Module 'BalootPackageDiscoveredTests' (2 sources)"
+    args: ["/usr/bin/swiftc","-module-name","BalootPackageDiscoveredTests","-emit-dependencies","-emit-module","-emit-module-path","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootPackageDiscoveredTests.swiftmodule","-output-file-map","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/sources","-I","/app/.build/x86_64-unknown-linux-gnu/debug/Modules","-target","x86_64-unknown-linux-gnu","-enable-batch-mode","-index-store-path","/app/.build/x86_64-unknown-linux-gnu/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/app/.build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-parse-as-library","-g","-Xcc","-fPIC","-Xcc","-g","-package-name","app","-Xcc","-fno-omit-frame-pointer"]
+
+  "C.BalootPackageTests-x86_64-unknown-linux-gnu-debug.module":
+    tool: shell
+    inputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.derived/runner.swift","/app/.build/x86_64-unknown-linux-gnu/debug/swift-version-24593BA9C3E375BF.txt","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootCoreTests.swiftmodule","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootPackageDiscoveredTests.swiftmodule","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.build/sources"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.build/runner.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootPackageTests.swiftmodule"]
+    description: "Compiling Swift Module 'BalootPackageTests' (1 sources)"
+    args: ["/usr/bin/swiftc","-module-name","BalootPackageTests","-emit-dependencies","-emit-module","-emit-module-path","/app/.build/x86_64-unknown-linux-gnu/debug/Modules/BalootPackageTests.swiftmodule","-output-file-map","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.build/sources","-I","/app/.build/x86_64-unknown-linux-gnu/debug/Modules","-target","x86_64-unknown-linux-gnu","-enable-batch-mode","-index-store-path","/app/.build/x86_64-unknown-linux-gnu/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/app/.build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-parse-as-library","-g","-Xcc","-fPIC","-Xcc","-g","-package-name","app","-Xcc","-fno-omit-frame-pointer"]
+
+  "C.BalootPackageTests-x86_64-unknown-linux-gnu-debug.test":
+    tool: shell
+    inputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/BalootCore.swiftmodule.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/KeypadAllocation.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/MatchEngine.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/MatchStorage.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/Models.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/Scoring.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCore.build/Validation.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/BalootCoreTests.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/BalootCoreTests.swiftmodule.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootCoreTests.build/KeypadAllocationTests.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/BalootCoreTests.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/BalootPackageDiscoveredTests.swiftmodule.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageDiscoveredTests.build/all-discovered-tests.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.build/BalootPackageTests.swiftmodule.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.build/runner.swift.o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.product/Objects.LinkFileList"]
+    outputs: ["/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.xctest"]
+    description: "Linking ./.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.xctest"
+    args: ["/usr/bin/swiftc","-L","/app/.build/x86_64-unknown-linux-gnu/debug","-o","/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.xctest","-module-name","BalootPackageTests","-emit-executable","-Xlinker","-rpath=$ORIGIN","@/app/.build/x86_64-unknown-linux-gnu/debug/BalootPackageTests.product/Objects.LinkFileList","-target","x86_64-unknown-linux-gnu","-g"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/app/Sources/Baloot/","/app/Sources/BalootCore/","/app/Tests/BalootCoreTests/","/app/Package.swift","/app/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
